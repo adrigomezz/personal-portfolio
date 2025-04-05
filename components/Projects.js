@@ -14,7 +14,7 @@ const Projects = () => {
       name: "Alien Blasters", 
       image: "/assets/card_alien_blasters.png", 
       description: "Videojuego de disparos en el espacio con gráficos retro.",
-      github: "https://github.com/adrigomezz/Alien-Blasters"
+      github: "https://github.com/adrigomezz/Alien-Blasters/tree/main"
     },
     { 
       name: "Politiquiz", 

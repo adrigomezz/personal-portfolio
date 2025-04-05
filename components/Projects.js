@@ -7,7 +7,7 @@ const Projects = () => {
       name: "Futsal Tact", 
       image: "/assets/card_futsal_tact.png", 
       description: "Aplicación táctica para entrenadores de futsal.",
-      github: "https://github.com/adrigomezz/futsaltact/tree/master",
+      github: "https://github.com/adrigomezz/futsal-tact/tree/main",
       demo: "/assets/apk/Futsal Tact.apk"
     },
     { 

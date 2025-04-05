@@ -7,7 +7,7 @@ const Projects = () => {
       name: "Futsal Tact", 
       image: "/assets/card_futsal_tact.png", 
       description: "Aplicación táctica para entrenadores de futsal.",
-      github: "https://github.com/adrigomezz/futsal-tact/tree/main",
+      github: "https://github.com/adrigomezz/Futsal-Tact/tree/main",
       demo: "/assets/apk/Futsal Tact.apk"
     },
     { 
@@ -20,7 +20,7 @@ const Projects = () => {
       name: "Politiquiz", 
       image: "/assets/card_politiquiz.png", 
       description: "Juego de preguntas sobre política con ranking online.",
-      github: "https://github.com/adrigomezz",
+      github: "https://github.com/adrigomezz/Politiquiz-Demo/tree/main",
       demo: "/assets/apk/POLITIQUIZ demo.apk"
     }
   ];

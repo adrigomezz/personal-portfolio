@@ -6,12 +6,18 @@ export default function Technologies() {
   const [darkMode, setDarkMode] = useState(false);
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
-  // Tecnologías clasificadas
   const technologies = {
-    Frontend: ["HTML", "CSS", "JavaScript", "React"],
-    Backend: ["Python", "SQL", "Postgre"],
-    Frameworks: ["Next.js", "Docker", "Flutter"],
+    Frontend: ["React", "JavaScript", "HTML", "CSS"],
+    Backend: ["Node.js", "Express.js", "MongoDB", "SQL"],
+    Frameworks: ["Git", "Firebase", "Linux"],
   };
+
+  function getGridClasses(category, isHovered) {
+    const count = technologies[category].length;
+    if (count === 4) return "grid-cols-2 grid-rows-2 gap-1 p-3";
+    if (isHovered) return "grid-cols-3 gap-2 p-3";
+    return "grid-cols-2 gap-1 p-2";
+  }
 
   return (
     <motion.section
@@ -23,7 +29,6 @@ export default function Technologies() {
         darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
       }`}
     >
-      {/* Título y descripción con más separación */}
       <h1 className="text-4xl font-bold text-[#26767A] mt-6">Stack Tecnológico</h1>
       <p className="text-lg text-gray-600 mt-2">
         Aquí puedes ver todas las tecnologías con las que trabajo.
@@ -32,7 +37,6 @@ export default function Technologies() {
         Desde desarrollo web hasta bases de datos y más.
       </p>
 
-      {/* Contenedor de categorías */}
       <div className="mt-6 flex flex-wrap justify-center gap-10 md:gap-20">
         {Object.keys(technologies).map((category) => (
           <motion.div
@@ -41,7 +45,6 @@ export default function Technologies() {
             onMouseEnter={() => setHoveredCategory(category)}
             onMouseLeave={() => setHoveredCategory(null)}
           >
-            {/* Burbuja circular que crece al hacer hover */}
             <motion.div
               initial={{ width: 130, height: 130 }}
               animate={{
@@ -51,15 +54,11 @@ export default function Technologies() {
               transition={{ duration: 0.3 }}
               className="rounded-full bg-white shadow-md flex items-center justify-center overflow-hidden border-2 border-gray-300"
             >
-              {/* Imágenes dentro de la burbuja */}
               <div
-                className={`grid ${
-                  category === "Frontend"
-                    ? "grid-cols-2 grid-rows-2 gap-0.1 p-3"
-                    : hoveredCategory === category
-                    ? "grid-cols-3 gap-2 p-3"
-                    : "grid-cols-2 gap-1 p-2"
-                }`}
+                className={`grid ${getGridClasses(
+                  category,
+                  hoveredCategory === category
+                )}`}
               >
                 {technologies[category].map((tech) => (
                   <div key={tech} className="flex flex-col items-center">
@@ -70,16 +69,16 @@ export default function Technologies() {
                         hoveredCategory === category ? "w-14 h-14" : "w-8 h-8"
                       }`}
                     />
-                    {/* Nombre de la tecnología, visible solo en hover */}
                     {hoveredCategory === category && (
-                      <p className="text-xs font-semibold text-gray-700 mt-1">{tech}</p>
+                      <p className="text-xs font-semibold text-gray-700 mt-1">
+                        {tech}
+                      </p>
                     )}
                   </div>
                 ))}
               </div>
             </motion.div>
 
-            {/* Nombre de la categoría */}
             <h1 className="text-lg font-semibold text-[#26767A] mt-3">{category}</h1>
           </motion.div>
         ))}

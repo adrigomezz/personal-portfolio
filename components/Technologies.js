@@ -7,7 +7,7 @@ export default function Technologies() {
   const [hoveredCategory, setHoveredCategory] = useState(null);
 
   const technologies = {
-    Frontend: ["React", "JavaScript", "HTML", "CSS"],
+    Frontend: ["React", "JavaScript.js", "HTML", "CSS"],
     Backend: ["Node.js", "Express.js", "MongoDB", "SQL"],
     Frameworks: ["Git", "Firebase", "Linux"],
   };
